@@ -12,6 +12,8 @@
 		7ED625442AA8D35200AF0F1F /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED625432AA8D35200AF0F1F /* InputHandler.m */; };
 		7ED625462AA8D38F00AF0F1F /* ScoreKeeper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED625452AA8D38F00AF0F1F /* ScoreKeeper.m */; };
 		7ED625482AA8D3D200AF0F1F /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED625472AA8D3D200AF0F1F /* QuestionManager.m */; };
+		7ED6254D2AA8D60900AF0F1F /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6254C2AA8D60900AF0F1F /* Question.m */; };
+		7ED6254F2AA8D70600AF0F1F /* QuestionFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED6254E2AA8D70600AF0F1F /* QuestionFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,10 @@
 		7ED625452AA8D38F00AF0F1F /* ScoreKeeper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreKeeper.m; sourceTree = "<group>"; };
 		7ED625472AA8D3D200AF0F1F /* QuestionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
 		7ED6254A2AA8D3E500AF0F1F /* QuestionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
+		7ED6254B2AA8D5FD00AF0F1F /* Question.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		7ED6254C2AA8D60900AF0F1F /* Question.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
+		7ED6254E2AA8D70600AF0F1F /* QuestionFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionFactory.m; sourceTree = "<group>"; };
+		7ED625512AA8D7BF00AF0F1F /* QuestionFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +82,12 @@
 				7ED625432AA8D35200AF0F1F /* InputHandler.m */,
 				7E9FC9CB2AA82A39007E4441 /* ScoreKeeper.h */,
 				7ED625452AA8D38F00AF0F1F /* ScoreKeeper.m */,
+				7ED6254B2AA8D5FD00AF0F1F /* Question.h */,
+				7ED6254C2AA8D60900AF0F1F /* Question.m */,
 				7ED625472AA8D3D200AF0F1F /* QuestionManager.m */,
 				7ED6254A2AA8D3E500AF0F1F /* QuestionManager.h */,
+				7ED6254E2AA8D70600AF0F1F /* QuestionFactory.m */,
+				7ED625512AA8D7BF00AF0F1F /* QuestionFactory.h */,
 			);
 			path = "Math-ObjC";
 			sourceTree = "<group>";
@@ -142,7 +152,9 @@
 				7ED625482AA8D3D200AF0F1F /* QuestionManager.m in Sources */,
 				7ED625462AA8D38F00AF0F1F /* ScoreKeeper.m in Sources */,
 				7E9FC9BD2AA828B8007E4441 /* main.m in Sources */,
+				7ED6254D2AA8D60900AF0F1F /* Question.m in Sources */,
 				7ED625442AA8D35200AF0F1F /* InputHandler.m in Sources */,
+				7ED6254F2AA8D70600AF0F1F /* QuestionFactory.m in Sources */,
 				7E9FC9C42AA82976007E4441 /* AdditionQuestion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

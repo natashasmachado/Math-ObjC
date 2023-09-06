@@ -8,37 +8,34 @@
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
-#import "AdditionQuestion.h" // Import the AdditionQuestion class
+#import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        BOOL gameOn = YES;
         InputHandler *inputHandler = [[InputHandler alloc] init];
         ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc] init];
-        
-        BOOL gameOn = YES;
+        QuestionManager *questionManager = [[QuestionManager alloc] init];
+        QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
+
         while (gameOn) {
-            AdditionQuestion *question = [[AdditionQuestion alloc] init];
+            Question *question = [questionFactory generateRandomQuestion];
+            [questionManager addQuestion:question];
             NSLog(@"%@", question.question);
 
-            // Get user input
             NSString *userInput = [inputHandler getUserInput];
-            if ([userInput isEqualToString:@"quit"]) {
-                gameOn = NO;
-                continue;
-            }
-            
             NSInteger userAnswer = [userInput intValue];
 
-            // Compare userAnswer to question.answer
             if (userAnswer == question.answer) {
                 NSLog(@"Right!");
-                scoreKeeper.correctAnswers++;
+                [scoreKeeper incrementCorrect];
             } else {
                 NSLog(@"Wrong!");
-                scoreKeeper.wrongAnswers++;
+                [scoreKeeper incrementWrong];
             }
-            
-            NSLog(@"%@", [scoreKeeper scoreString]);
+
+            NSLog(@"%@", [questionManager timeOutput]);
         }
     }
     return 0;

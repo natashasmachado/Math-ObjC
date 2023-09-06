@@ -2,11 +2,17 @@
 //  QuestionManager.h
 //  Math-ObjC
 //
-//  Created by Natasha Machado on 2023-09-06.
+//  Created by Natasha Machado on 2023-09-04.
 //
 
-#ifndef QuestionManager_h
-#define QuestionManager_h
+#import <Foundation/Foundation.h>
+#import "Question.h"
 
+@interface QuestionManager : NSObject
 
-#endif /* QuestionManager_h */
+@property (nonatomic, strong) NSMutableArray *questions;
+
+- (void)addQuestion:(Question *)question;
+- (NSString *)timeOutput;
+
+@end
