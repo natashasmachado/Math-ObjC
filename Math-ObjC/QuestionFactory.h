@@ -6,11 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Question.h"
 
-@class Question;
 @interface QuestionFactory : NSObject
 
 - (Question *)generateRandomQuestion;
 
 @end
-

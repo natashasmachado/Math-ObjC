@@ -9,9 +9,10 @@
 
 @interface ScoreKeeper : NSObject
 
-@property (nonatomic, assign) NSInteger correctAnswers;
-@property (nonatomic, assign) NSInteger wrongAnswers;
+@property (nonatomic, assign) NSInteger correctCount;
+@property (nonatomic, assign) NSInteger wrongCount;
 
-- (NSString *)scoreString;
+- (void)incrementCorrect;
+- (void)incrementWrong;
 
 @end

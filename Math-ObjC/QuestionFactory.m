@@ -6,30 +6,22 @@
 //
 
 #import "QuestionFactory.h"
-#import "Question.h"
 #import "AdditionQuestion.h"
 
 @implementation QuestionFactory
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-       
-        _questionSubclassNames = @[@"AdditionQuestion", @"SubtractionQuestion", @"MultiplicationQuestion", @"DivisionQuestion"];
-    }
-    return self;
-}
-
 - (Question *)generateRandomQuestion {
+    NSArray *questionClassNames = @[@"AdditionQuestion", @"SubtractionQuestion", @"MultiplicationQuestion", @"DivisionQuestion"];
+    NSInteger randomIndex = arc4random_uniform((uint32_t)[questionClassNames count]);
+    NSString *randomClassName = questionClassNames[randomIndex];
     
-    NSUInteger randomIndex = arc4random_uniform((uint32_t)self.questionSubclassNames.count);
+    Class questionClass = NSClassFromString(randomClassName);
     
-    
-    NSString *className = self.questionSubclassNames[randomIndex];
-    Class questionClass = NSClassFromString(className);
-    Question *question = [[questionClass alloc] init];
-    
-    return question;
+    if (questionClass && [questionClass isSubclassOfClass:[Question class]]) {
+        return [[questionClass alloc] init];
+    } else {
+        return [[AdditionQuestion alloc] init];
+    }
 }
 
 @end

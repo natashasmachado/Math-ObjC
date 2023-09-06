@@ -11,16 +11,18 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _correctAnswers = 0;
-        _wrongAnswers = 0;
+        _correctCount = 0;
+        _wrongCount = 0;
     }
     return self;
 }
 
-- (NSString *)scoreString {
-    NSInteger totalQuestions = self.correctAnswers + self.wrongAnswers;
-    NSInteger percentage = (totalQuestions > 0) ? (self.correctAnswers * 100 / totalQuestions) : 0;
-    return [NSString stringWithFormat:@"score: %ld right, %ld wrong ---- %ld%%", (long)self.correctAnswers, (long)self.wrongAnswers, (long)percentage];
+- (void)incrementCorrect {
+    self.correctCount++;
+}
+
+- (void)incrementWrong {
+    self.wrongCount++;
 }
 
 @end
